@@ -99,12 +99,12 @@ angular.module('starter.controllers', [])
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
-    $scope.$parent.setHeaderFab('left');
+    $scope.$parent.setHeaderFab('right');
 
     // Delay expansion
     $timeout(function() {
-        $scope.isExpanded = true;
-        $scope.$parent.setExpanded(true);
+        $scope.isExpanded = false;
+        $scope.$parent.setExpanded(false);
     }, 300);
 
     // Set Motion
@@ -142,8 +142,8 @@ angular.module('starter.controllers', [])
 .controller('ActivityCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
-    $scope.isExpanded = true;
-    $scope.$parent.setExpanded(true);
+    $scope.isExpanded = false;
+    $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
 
     $timeout(function() {
@@ -159,8 +159,8 @@ angular.module('starter.controllers', [])
 .controller('GalleryCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
-    $scope.isExpanded = true;
-    $scope.$parent.setExpanded(true);
+    $scope.isExpanded = false;
+    $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
 
     // Activate ink for controller

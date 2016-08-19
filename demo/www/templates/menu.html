@@ -1,6 +1,6 @@
-<ion-side-menus>
+<ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
-        <ion-nav-bar class="bar-royal" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+        <ion-nav-bar class="bar-royal" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="center">
             <ion-nav-buttons side="right">
                 <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="right">
                 </button>
@@ -10,27 +10,26 @@
         <ion-nav-view name="menuContent" ng-class="{expanded: isExpanded}" ></ion-nav-view>
     </ion-side-menu-content>
     <ion-side-menu side="right">
-        <ion-header-bar class="dark-bg expanded">
-            <span class="avatar" style="background: url('img/crown.jpg'); background-size: cover;"></span>
-            <h2>Thronester</h2>
+        <ion-header-bar class="royal">
+            <h2>yoga.brasília.io</h2>
         </ion-header-bar>
-        <ion-content class="stable-bg has-expanded-header">
+        <ion-content class="stable-bg">
             <ion-list>
-                <ion-item nav-clear menu-close ui-sref="app.activity">
-                    Activity
+                <ion-item nav-clear menu-close ui-sref="app.activity" class="item-icon-left">
+                    <i class="icon ion-ios-book-outline"></i> Mural do Yoga
                 </ion-item>
-                <ion-item nav-clear menu-close ui-sref="app.login">
-                    Login
+                <ion-item nav-clear menu-close ui-sref="app.friends" class="item-icon-left">
+                    <i class="icon ion-ios-heart-outline"></i>Meus Favoritos
                 </ion-item>
-                <ion-item nav-clear menu-close ui-sref="app.profile">
-                    Profile
+                <ion-item nav-clear menu-close ui-sref="app.profile" class="item-icon-left">
+                    <i class="icon ion-ios-person-outline"></i> Meu Perfil
                 </ion-item>
-                <ion-item nav-clear menu-close ui-sref="app.friends">
-                    Friends
-                </ion-item>
-                <ion-item nav-clear menu-close ui-sref="app.gallery">
-                    Gallery
-                </ion-item>
+                <!--<ion-item nav-clear menu-close ui-sref="app.login" class="item-icon-left">-->
+                <!--    Tela de Login-->
+                <!--</ion-item>-->
+                <!--<ion-item nav-clear menu-close ui-sref="app.gallery" class="item-icon-left">-->
+                <!--    Gallery-->
+                <!--</ion-item>-->
             </ion-list>
         </ion-content>
     </ion-side-menu>

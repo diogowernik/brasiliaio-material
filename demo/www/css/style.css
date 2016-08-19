@@ -108,6 +108,7 @@ p {
     top: 0;
     text-align: center
 }
+
 .ou {
     text-align: center;
     margin-bottom: -18px;
@@ -125,4 +126,25 @@ p {
 
 .hero>.content>.avatar {
     margin-bottom: 0px;
+}
+.light, .light *, .light:active, .light:active *, .light:hover, .light:hover * {
+    color: #8e499c;
+}
+
+.light, a.light {
+    color:  #8e499c;
+}
+
+.hero>.content>.avatar {
+    margin-bottom: 5px;
+    margin-left: 0px;
+}
+.bar.bar-header .button+.title {
+    text-align: center;
+    line-height: 46px;
+}
+
+.logo-menu {
+    background: url('../img/crown.jpg') center;
+    background-size: cover;
 }
