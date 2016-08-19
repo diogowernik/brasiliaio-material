@@ -99,11 +99,6 @@ p {
     margin-bottom: 20px;
 }
 
-/*.hero {*/
-/*    height: 130px;*/
-/*    margin-bottom: -12px;*/
-/*}*/
-
 .app-header {
     background: #8e499c;
     height: 70px;
@@ -117,12 +112,17 @@ p {
     text-align: center;
     margin-bottom: -18px;
 }
-.view-container {
-    position: absolute;
-    display: block;
-    width: 320px;
-    height: 480px;
-}
+
 .item-md-label {
     padding: 26px 0 0;
+}
+
+.nil-pub {
+    text-align: center;
+    margin-top: 58px;
+    margin-left: 25px;
+}
+
+.hero>.content>.avatar {
+    margin-bottom: 0px;
 }
