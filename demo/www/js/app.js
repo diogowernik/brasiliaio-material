@@ -31,18 +31,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         controller: 'AppCtrl'
     })
 
-    .state('app.activity', {
-        url: '/activity',
+    .state('app.publications', {
+        url: '/publications',
         views: {
             'menuContent': {
-                templateUrl: 'templates/activity.html',
-                controller: 'ActivityCtrl'
+                templateUrl: 'templates/publications.html',
+                controller: 'PublicationsCtrl'
             },
             'fabContent': {
                 template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
-                        document.getElementById('fab-activity').classList.toggle('on');
+                        document.getElementById('fab-publications').classList.toggle('on');
                     }, 200);
                 }
             }
@@ -60,7 +60,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
-                        document.getElementById('fab-activity').classList.toggle('on');
+                        document.getElementById('fab-publication').classList.toggle('on');
                     }, 200);
                 }
             }
