@@ -16,6 +16,9 @@ Buscar dados em: http://yoga.brasilia.io/cards/from-subdomain/1.json
 
 http://git-music.org
 
+Mural do yoga (publications/from-subdomain/1.json)
+Professores e Estúdios (cards/from-subdomain/1.json)
+
 
 
 **about this template**
