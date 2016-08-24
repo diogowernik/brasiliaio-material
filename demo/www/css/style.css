@@ -146,3 +146,7 @@ p {
     background: url('../img/crown.jpg') center;
     background-size: cover;
 }
+.description {
+    height: 116px;
+    overflow: hidden;
+}

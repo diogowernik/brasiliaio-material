@@ -1,15 +1,19 @@
+<style>.list{padding-right: 0px}</style>
 <ion-view view-title="Mural do Yoga">
 
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
         <div class="item card-item" ng-repeat="item in publications">
             <div class="list card stable-bg">
-                <div class="item item-avatar">
-                    <img src="{{users[item.user_id].cover.cover.url}}">
+                <div class="item item-avatar" style="margin-bottom: -30px">
+                    <img ng-src="{{item.avatar.avatar.url}}">
                     <h2>{{item.title}}</h2>
-                    <p>{{users[item.user_id].name}}</p>
+                    <p>{{item.name}}</p>
                 </div>
                 <div class="item item-body">
-                    {{item.description}}
+                    <img ng-src="{{item.image.image.url}}">
+                    <div class="description">
+                        <p style="text-align:justify">{{item.description}}</p>
+                    </div>
                     <p>
                         <a class="subdued">1 Like</a>
                         <a class="subdued">5 Comments</a>
