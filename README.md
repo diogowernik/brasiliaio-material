@@ -1,7 +1,7 @@
-### Brasília \o Mobile App - Ionic-Material
+## Brasília \o Mobile App - Ionic-Material
 
 
-#### Tarefa 1 - Login**
+### Tarefa 1 - Login
 
 Aplicação Web: http://yoga.brasilia.io
 
@@ -15,7 +15,8 @@ Aplicação Mobile: https://github.com/diogowernik/brasiliaio-material ( http://
 
 3) Realizar login na aplicação utilizando facebook
 
-#### Tarefa 2 - Criação de Conta
+
+### Tarefa 2 - Criação de Conta
 
 Aplicação Web: http://yoga.brasilia.io
 
@@ -29,13 +30,17 @@ Aplicação Mobile: https://github.com/diogowernik/brasiliaio-material ( http://
 
 3) Criar conta com google plus
 
-#### Observações:
+
+
+### Observações:
 
 Login aplicação web: http://yoga.brasilia.io/login
 
 Sign up aplicação web: http://yoga.brasilia.io/sign_up
 
-#### Rotas Users (GET, POST, DELETE, PUT, PATCH)
+
+
+### Rotas Users (GET, POST, DELETE, PUT, PATCH)
 
 ```
 new_user_session_path       	GET	        /login(.:format)	devise/sessions#new
