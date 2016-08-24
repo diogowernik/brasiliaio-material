@@ -1,0 +1,35 @@
+<ion-view view-title="Publicações">
+
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+        <div class="item card-item" ng-repeat="item in publications">
+            <div class="list card stable-bg">
+                <div class="item item-avatar">
+                    <img src="{{users[item.user_id].cover.cover.url}}">
+                    <h2>{{item.title}}</h2>
+                    <p>{{users[item.user_id].name}}</p>
+                </div>
+                <div class="item item-body">
+                    {{item.description}}
+                    <p>
+                        <a class="subdued">1 Like</a>
+                        <a class="subdued">5 Comments</a>
+                    </p>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
+                        <i class="icon ion-thumbsup"></i> Like
+                    </a>
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
+                        <i class="icon ion-chatbox"></i> Comment
+                    </a>
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
+                        <i class="icon ion-share"></i> Share
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+

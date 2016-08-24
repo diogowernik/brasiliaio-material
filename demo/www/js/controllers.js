@@ -183,18 +183,39 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
-.controller('PublicationsCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+.controller('PublicationsCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, $http) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
 
-    $timeout(function() {
-        ionicMaterialMotion.fadeSlideIn({
-            selector: '.animate-fade-slide-in .item'
+
+
+    $http({
+      method: 'GET',
+      url: 'http://yoga.brasilia.io/cards/from-subdomain/1.json'
+    }).then(function successCallback(response) {
+        $scope.users = response.data;
+        $http({
+              method: 'GET',
+              url: 'http://yoga.brasilia.io/publications/from-subdomain/1.json'
+            }).then(function successCallback(response) {                
+                $scope.publications = response.data;                                
+                $timeout(function() {
+                    ionicMaterialMotion.fadeSlideIn({
+                        selector: '.animate-fade-slide-in .item'
+                    });
+                }, 200);
+              }, function errorCallback(response) {
+                $scope.error = response;
         });
-    }, 200);
+      }, function errorCallback(response) {
+        $scope.error = response;
+      });
+
+
+    
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
