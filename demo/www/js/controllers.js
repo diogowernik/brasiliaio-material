@@ -95,6 +95,14 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
+.controller('SignUpCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
+    $scope.$parent.clearFabs();
+    $timeout(function() {
+        $scope.$parent.hideHeader();
+    }, 0);
+    ionicMaterialInk.displayEffect();
+})
+
 .controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     // Set Header
     $scope.$parent.showHeader();

@@ -1,23 +1,18 @@
 ### Brasília \o Mobile App - Ionic-Material
 
-#### Tarefa
+#### Tarefas Autenticação
 
-Criar 2 requisições GET
+**Tarefa 1 - Criação de Conta**
 
-**template/demo/publications.html**
+Aplicação Web: http://yoga.brasilia.io
 
-Buscar dados em: http://yoga.brasilia.io/publications/from-subdomain/1.json
+Aplicação Mobile: https://github.com/diogowernik/brasiliaio-material ( http://git-music.org )
 
-**template/demo/cards.html**
+**Tarefa 2 - Login**
 
-Buscar dados em: http://yoga.brasilia.io/cards/from-subdomain/1.json
 
-##### Exemplo online do app:
 
-http://git-music.org
 
-Mural do yoga (publications/from-subdomain/1.json)
-Professores e Estúdios (cards/from-subdomain/1.json)
 
 
 

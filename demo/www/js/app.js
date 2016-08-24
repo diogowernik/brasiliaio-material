@@ -116,6 +116,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     })
 
+    .state('app.sign-up', {
+        url: '/sign-up',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/sign-up.html',
+                controller: 'SignUpCtrl'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
+    })
+
     .state('app.profile', {
         url: '/profile',
         views: {
