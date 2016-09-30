@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ng-token-auth'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -13,6 +13,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     });
 })
+.config(function($authProvider) {
+    $authProvider.configure({
+        apiUrl: 'http://127.0.0.1:3000/api/v1',
+        omniauthWindowType: window.cordova == undefined ? 'newWindow' : 'inAppBrowser',         
+        storage: 'localStorage',        
+        handleLoginResponse: function(response) {
+        console.log(response.data);
+        
+        return response.data;
+        },
+        handleAccountUpdateResponse: function(response) {
+        console.log(response.data);
+        return response.data;
+        },
+        handleTokenValidationResponse: function(response) {
+        console.log(response.data);
+        
+        return response.data;
+        },
+
+confirmationSuccessUrl:  window.location.href,
+        storage: 'localStorage'
+        /*
+        createPopup: function(url) {
+            return window.open(url, '_blank', 'closebuttoncaption=Cancel');
+        },*/
+        
+
+ 
+    });
+})
+
+
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
@@ -46,7 +79,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                     }, 200);
                 }
             }
-        }
+        },
+
+        resolve: {
+                auth: function($auth, $state) {
+                  return $auth.validateUser().catch(function(){                    
+                    // redirect unauthorized users to the login page
+                    $state.go('app.login');
+                  });
+                }
+              }
     })
     
     .state('app.cards', {
@@ -190,6 +232,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
     ;
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/login');
+    $urlRouterProvider.otherwise('/app/publications');
 });
 
