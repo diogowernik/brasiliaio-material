@@ -15,7 +15,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
 })
 .config(function($authProvider) {
     $authProvider.configure({
-        apiUrl: 'http://127.0.0.1:3000/api/v1',
+        apiUrl: 'http://portaisdobem.org/api/v1',
         omniauthWindowType: window.cordova == undefined ? 'newWindow' : 'inAppBrowser',         
         storage: 'localStorage',        
         handleLoginResponse: function(response) {
