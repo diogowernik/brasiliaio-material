@@ -48,11 +48,11 @@ angular.module('starter.controllers', [])
 
         switch (location) {
             case 'left':
-                hasHeaderFabLeft = true;
-                break;
+            hasHeaderFabLeft = true;
+            break;
             case 'right':
-                hasHeaderFabRight = true;
-                break;
+            hasHeaderFabRight = true;
+            break;
         }
 
         $scope.hasHeaderFabLeft = hasHeaderFabLeft;
@@ -87,12 +87,46 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
+.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $auth, $state) {
     $scope.$parent.clearFabs();
+    
     $timeout(function() {
         $scope.$parent.hideHeader();
     }, 0);
     ionicMaterialInk.displayEffect();
+
+    $scope.accountCreate = function() {
+          $auth.submitRegistration($scope.registrationData)
+            .then(function(resp) {
+              $state.go('app.publications');
+            })
+            .catch(function(resp) {
+              $scope.error = resp;
+            });
+        };
+
+
+    $scope.login = function(provider) {
+        if (provider == 'email'){
+            $auth.submitLogin($scope.registrationData)
+                .then(function(resp) {
+                  $state.go('app.publications');
+                })
+                .catch(function(resp) {
+                  $scope.error = resp;
+                });
+            } else {
+                  $auth.authenticate(provider)
+                      .then(function(resp) {
+                          $state.go('app.publications');
+
+                      })
+                      .catch(function(resp) {
+                        $scope.error = resp;
+                    });        
+            }
+        
+    };    
 })
 
 .controller('SignUpCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
@@ -203,27 +237,27 @@ angular.module('starter.controllers', [])
     $http({
       method: 'GET',
       url: 'http://yoga.brasilia.io/cards/from-subdomain/1.json'
-    }).then(function successCallback(response) {
-        $scope.users = response.data;
-        $http({
-              method: 'GET',
-              url: 'http://yoga.brasilia.io/publications/from-subdomain/1.json'
-            }).then(function successCallback(response) {                
-                $scope.publications = response.data;                                
-                $timeout(function() {
-                    ionicMaterialMotion.fadeSlideIn({
-                        selector: '.animate-fade-slide-in .item'
-                    });
-                }, 200);
-              }, function errorCallback(response) {
-                $scope.error = response;
+  }).then(function successCallback(response) {
+    $scope.users = response.data;
+    $http({
+      method: 'GET',
+      url: 'http://yoga.brasilia.io/publications/from-subdomain/1.json'
+  }).then(function successCallback(response) {                
+    $scope.publications = response.data;                                
+    $timeout(function() {
+        ionicMaterialMotion.fadeSlideIn({
+            selector: '.animate-fade-slide-in .item'
         });
-      }, function errorCallback(response) {
-        $scope.error = response;
-      });
+    }, 200);
+}, function errorCallback(response) {
+    $scope.error = response;
+});
+}, function errorCallback(response) {
+    $scope.error = response;
+});
 
 
-    
+
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
@@ -239,19 +273,19 @@ angular.module('starter.controllers', [])
     $http({
       method: 'GET',
       url: 'http://yoga.brasilia.io/cards/from-subdomain/1.json'
-    }).then(function successCallback(response) {
-        $scope.cards = response.data;
-        $timeout(function() {
-            ionicMaterialMotion.fadeSlideIn({
-                selector: '.animate-fade-slide-in .item'
-            });
-        }, 200);
-      }, function errorCallback(response) {
-        $scope.error = response;
-      });
+  }).then(function successCallback(response) {
+    $scope.cards = response.data;
+    $timeout(function() {
+        ionicMaterialMotion.fadeSlideIn({
+            selector: '.animate-fade-slide-in .item'
+        });
+    }, 200);
+}, function errorCallback(response) {
+    $scope.error = response;
+});
 
 
-    
+
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
