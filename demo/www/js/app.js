@@ -15,7 +15,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
 })
 .config(function($authProvider) {
     $authProvider.configure({
-        apiUrl: 'http://portaisdobem.org/api/v1',
+        apiUrl: 'http://smartmarket.io/api',
         omniauthWindowType: window.cordova == undefined ? 'newWindow' : 'inAppBrowser',         
         storage: 'localStorage',        
         handleLoginResponse: function(response) {
