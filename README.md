@@ -2,7 +2,7 @@ Oi Helio,
 
 Tudo bom :)
 
-Então, estamos com os dois projetos rodando online. Estou te dando o acesso com um pouco antes de nosso encontro para você poder ir ficando familiar com o ambiente que estamos trabalhando :)
+Então, estamos com os dois projetos rodando online. Te dei acesso a ambas as maquinas pelo c9.io
 
 Compartilhei contigo o acesso pelo c9 aos dois ambientes:
 
@@ -16,24 +16,26 @@ Compartilhei contigo o acesso pelo c9 aos dois ambientes:
 
 Fiz alguns testes e adicionei alguns arquivos...
 
-**1) Criar conta e logar com email:**
+### 1) Criar conta e logar com email:
 
-consigo criar contas com email pelo site
-
-consigo logar nas contas com email pelo site
-
-consigo criar contas com e-mail usando o Postman (para testar api)
+  consigo criar contas com email pelo site
+  
+  consigo logar nas contas com email pelo site
+  
+  consigo criar contas com e-mail usando o Postman (para testar api)
 
 **Não consigo nem criar conta nem logar com email usando a aplicação ionic**
 
 
-**2) Criar conta e logar com facebook e google plus**
+### 2) Criar conta e logar com facebook e google plus**
 
-As contas com google plus e facebook, são criadas pelo **site**, mas não é realizado o login
-
-**não consigo criar logar pelo site, nem usando google plus nem facebook**
-
-**não consigo criar contas nem logar usando o google plus ou facebook pela aplicação ionic**
+  As contas com google plus e facebook, são criadas pelo **site**, **mas não é realizado o login**
+  
+  **não consigo logar pelo site, nem usando google plus nem facebook**
+  
+  **não consigo criar contas nem logar usando o google plus ou facebook pela aplicação ionic**
+  
+  
 
 Eu acredito que falte alguma configuração pequena que resolverá ambos os problemas :)
 
