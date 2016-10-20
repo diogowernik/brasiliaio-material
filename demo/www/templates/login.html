@@ -5,7 +5,7 @@
         </div>
         <div class="hero header flat" style="height: 130px;margin-bottom: -12px;">
             <div class="content">
-                <h4 style="color:#4b4a4b">Login com:</h4>
+                <h4 style="color:#4b4a4b">Login com: {{error}}</h4>
             </div>
         </div>
         <div class="button-bar social-login">
@@ -20,7 +20,7 @@
             <ion-md-input ng-model="registrationData.password_confirmation" ng-show="accountCreateField" placeholder="confirmar senha" highlight-color="energized" type="confirm_password"></ion-md-input>
         </div>
         <div class="padding">
-            <button ng-show="accountCreateField" ng-click="accountCreateField()" class="button button-full button-royal ink">Registrar</button>
+            <button ng-show="accountCreateField" ng-click="accountCreate(registrationData)" class="button button-full button-royal ink">Registrar</button>
             <button ng-show="!accountCreateField" ng-click="login('email')" class="button button-full button-royal ink">Login</button>
         </div>
         <div class="create-account">

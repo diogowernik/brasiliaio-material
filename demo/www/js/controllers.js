@@ -95,9 +95,11 @@ angular.module('starter.controllers', [])
     }, 0);
     ionicMaterialInk.displayEffect();
 
-    $scope.accountCreate = function() {
-          $auth.submitRegistration($scope.registrationData)
+    $scope.accountCreate = function(registrationData) {
+        
+          $auth.submitRegistration(registrationData)
             .then(function(resp) {
+                console.log(resp);
               $state.go('app.publications');
             })
             .catch(function(resp) {
