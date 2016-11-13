@@ -3,6 +3,49 @@
 
 angular.module('starter.controllers', [])
 
+.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $auth, $state) {
+    $scope.$parent.clearFabs();
+    
+    $timeout(function() {
+        $scope.$parent.hideHeader();
+    }, 0);
+    ionicMaterialInk.displayEffect();
+
+    $scope.accountCreate = function(registrationData) {
+        
+          $auth.submitRegistration(registrationData)
+            .then(function(resp) {
+              $state.go('app.publications');
+            })
+            .catch(function(resp) {
+              $scope.error = resp;
+            });
+        };
+
+
+    $scope.login = function(provider) {
+        if (provider == 'email'){
+            $auth.submitLogin($scope.registrationData)
+                .then(function(resp) {
+                  $state.go('app.publications');
+                })
+                .catch(function(resp) {
+                  $scope.error = resp;
+                });
+            } else {
+                  $auth.authenticate(provider)
+                      .then(function(resp) {
+                          $state.go('app.publications');
+
+                      })
+                      .catch(function(resp) {
+                        $scope.error = resp;
+                    });        
+            }
+        
+    };    
+})
+
 .controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout) {
     // Form data for the login modal
     $scope.loginData = {};
@@ -85,50 +128,6 @@ angular.module('starter.controllers', [])
             fabs[0].remove();
         }
     };
-})
-
-.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $auth, $state) {
-    $scope.$parent.clearFabs();
-    
-    $timeout(function() {
-        $scope.$parent.hideHeader();
-    }, 0);
-    ionicMaterialInk.displayEffect();
-
-    $scope.accountCreate = function(registrationData) {
-        
-          $auth.submitRegistration(registrationData)
-            .then(function(resp) {
-                console.log(resp);
-              $state.go('app.publications');
-            })
-            .catch(function(resp) {
-              $scope.error = resp;
-            });
-        };
-
-
-    $scope.login = function(provider) {
-        if (provider == 'email'){
-            $auth.submitLogin($scope.registrationData)
-                .then(function(resp) {
-                  $state.go('app.publications');
-                })
-                .catch(function(resp) {
-                  $scope.error = resp;
-                });
-            } else {
-                  $auth.authenticate(provider)
-                      .then(function(resp) {
-                          $state.go('app.publications');
-
-                      })
-                      .catch(function(resp) {
-                        $scope.error = resp;
-                    });        
-            }
-        
-    };    
 })
 
 .controller('SignUpCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {

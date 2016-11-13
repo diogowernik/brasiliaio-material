@@ -15,9 +15,9 @@
         <div class="content ou"><h6 style="color:#4b4a4b"> Ou </h6>
         </div>
         <div class="list">
+            <ion-md-input ng-model="registrationData.name" ng-show="accountCreateField" placeholder="Nome" type="text"></ion-md-input>
             <ion-md-input ng-model="registrationData.email" placeholder="e-mail" highlight-color="balanced" type="text"></ion-md-input>
             <ion-md-input ng-model="registrationData.password" placeholder="senha" highlight-color="energized" type="password"></ion-md-input>
-            <ion-md-input ng-model="registrationData.password_confirmation" ng-show="accountCreateField" placeholder="confirmar senha" highlight-color="energized" type="confirm_password"></ion-md-input>
         </div>
         <div class="padding">
             <button ng-show="accountCreateField" ng-click="accountCreate(registrationData)" class="button button-full button-royal ink">Registrar</button>
